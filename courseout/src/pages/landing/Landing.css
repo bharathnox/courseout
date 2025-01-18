@@ -1,0 +1,16 @@
+.landingdiv{
+    display: flex;
+    flex-direction: column;
+    height: 86.6%;
+    align-items: center;
+    background-color: rgb(207, 204, 204);
+}
+.stdbenefits ol li{
+    list-style:none;
+}
+.benefits ol li{
+    list-style:none;
+}
+h1, h2, ol{
+    text-align: center;
+}

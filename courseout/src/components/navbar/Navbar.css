@@ -1,0 +1,32 @@
+.navdiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(139, 127, 127);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+.navdiv h1{
+    text-decoration: none;
+    font-weight:200;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.items{
+    list-style: none;
+    display: flex;
+    padding: 10px;
+}
+.items li{
+    text-decoration: none;
+    padding: 0 10px;
+}
+.items li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

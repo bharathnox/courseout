@@ -1,0 +1,11 @@
+.divcourses{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+table, th, td, tr{
+    width: 700px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 7px;
+}

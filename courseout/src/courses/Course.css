@@ -1,0 +1,20 @@
+.courseform{
+    display: flex;
+    margin-top: 20px;
+    margin-right: 20px;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 20px;
+    justify-content:flex-end;
+    align-items:flex-end;
+}
+.courseform .courseformdiv .formlabel{
+    margin-bottom: 20px;
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    gap: 8px;
+}
+.courseform .courseformdiv .formlabel input{
+    padding: 3px;
+}

@@ -1,0 +1,7 @@
+.teacherdiv{
+    display: flex;
+    justify-content: space-between;
+}
+.yourcour{
+    margin-left: 20px;
+}
