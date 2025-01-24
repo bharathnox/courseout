@@ -1,39 +1,42 @@
-const express = require('express');
-const app = express();
-const mongoose = require('mongoose');
-const courseModel = require('./model/coursemodel')
+const express = require('express')
+const app = express()
+app.use(express.json())
+
 const cors = require('cors')
-const dotenv = require('dotenv');
-dotenv.config();
-
-const stdUserRoute = require('./routes/stdUser')
-
-const port = 5002;
 app.use(cors())
-app.use(express.json());
-app.use("/stdUser", stdUserRoute)
+
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
+
 app.set('view engine', 'ejs')
 
-app.get('/', (req, res) => {
-    courseModel.find({})
-    .then(courses => res.json(courses))
-    .catch(err => res.json(err))
-})
+require('dotenv').config()
 
-app.post('/createCourse', (req, res) => {
-    courseModel.create(req.body)
-    .then(courses => res.json(courses))
-    .catch(err => res.json(err))
-})
+const mongoose = require('mongoose')
 
-app.get('/signup', (req, res) => {
-    return res.render("signup")
-})
+const useSignup = require('./routes/signup')
+const useSignuptr = require('./routes/signuptr')
+const useLogin = require('./routes/login')
+const useLogintr = require('./routes/logintr')
+const useCreateCourse = require('./routes/createCourse')
+const useIndex = require('./routes/index')
+
+app.use("/", useIndex)
+
+app.use("/signup", useSignup)
+
+app.use("/signuptr", useSignuptr)
+
+app.use("/login", useLogin)
+
+app.use("/logintr", useLogintr)
+
+app.use("/createCourse", useCreateCourse)
 
 mongoose.connect(process.env.MONGO_URL).then( async ()=>{
     console.log('Connected to MongoDB');
 
-    app.listen(port, ()=> {
-        console.log(`Server running on port: ${port}`);
+    app.listen(process.env.PORT, ()=> {
+        console.log(`Server running on port: ${process.env.PORT}`);
     })
 })
