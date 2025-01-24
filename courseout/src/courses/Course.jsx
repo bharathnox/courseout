@@ -9,7 +9,7 @@ export default function Course(){
     const [price, setPrice] = useState()
     const navigate = useNavigate()
 
-    const Submit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         axios.post("http://localhost:5002/createCourse", {courseName, description, price})
         .then(result => {
@@ -23,7 +23,7 @@ export default function Course(){
         <>
             <div className="courseform">
                 <div className="courseformdiv">
-                    <form onSubmit={Submit}>
+                    <form onSubmit={handleSubmit}>
                         <h2>Add Course</h2>
                         <div className="formlabel">
                             <label htmlFor="">Course Name</label>

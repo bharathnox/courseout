@@ -5,9 +5,9 @@ export default function Landing() {
     const navigate = useNavigate()
 
     const SignInPage = () => {
-        console.log("clicking")
-        navigate('/loginPage')
+        navigate('/loginpage')
     }
+
     return(
         <>
             <div className='landingdiv'>

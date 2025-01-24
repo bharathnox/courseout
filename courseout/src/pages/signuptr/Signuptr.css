@@ -1,0 +1,38 @@
+.signuptrdiv {
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 60px;
+    border: 1px solid rgb(56, 56, 56);
+    border-radius: 8px;
+    padding: 40px 20px;
+    box-shadow: 10px 10px 5px rgb(43, 42, 42);
+}
+.signuptrform{
+    display: flex;
+    flex-direction: column;
+}
+.signuptrform label{
+    margin-bottom: 10px;
+    font-size: larger;
+    font-weight: 400;
+}
+.signuptrform input {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: medium;
+    border: 1px solid rgb(56, 56, 56);
+    border-radius: 6px;
+}
+.signuptrform input[type="submit"] {
+    margin-top: 30px;
+    color: whitesmoke;
+    background-color: rgb(43, 42, 42);
+    border: 1px solid rgb(56, 56, 56);
+    border-radius: 6px;
+    font-size: large;
+}
+.signuptrform input[type="submit"]:hover {
+    cursor: pointer;
+}
