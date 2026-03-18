@@ -42,6 +42,7 @@ app.use("/enroll", useEnroll)
 
 app.use("/studentCourses", useStudentCourses)
 
+console.log("MONGO_URL:", process.env.MONGO_URL);
 mongoose.connect(process.env.MONGO_URL).then(async () => {
     console.log('Connected to MongoDB');
 
