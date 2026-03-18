@@ -1,32 +1,93 @@
-.navdiv{
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin: 12px 24px;
+    border-radius: 16px;
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--surface-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.navdiv {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(139, 127, 127);
+    align-items: center;
+    padding: 12px 32px;
 }
 
-.navbar a {
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     text-decoration: none;
-    color: black;
 }
 
-.navdiv h1{
-    text-decoration: none;
-    font-weight:200;
-    padding: 0 10px;
+.logo-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    /* Soft edges for the logo matching the modern app */
+    object-fit: cover;
+}
+
+.navdiv h1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0;
+    /* Rich text gradient for the brand name */
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     cursor: pointer;
 }
 
-.items{
+.items {
     list-style: none;
     display: flex;
-    padding: 10px;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
 }
-.items li{
+
+.items li {
     text-decoration: none;
-    padding: 0 10px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color 0.3s ease, transform 0.3s ease;
 }
-.items li:hover{
-    text-decoration: underline;
+
+.items li:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
     cursor: pointer;
+}
+
+.items li:has(.logout-btn) {
+    display: flex;
+    align-items: center;
+}
+
+.logout-btn {
+    padding: 6px 16px;
+    font-size: 0.9rem;
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: none;
+}
+
+.logout-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
 }

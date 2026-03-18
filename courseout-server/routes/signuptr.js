@@ -7,19 +7,19 @@ const bcrypt = require('bcryptjs')
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-    try{
+    try {
         //get all data from body
         const { trName, email, password } = req.body;
-        
+
         //all data should exist
-        if(!(trName && email && password)){
+        if (!(trName && email && password)) {
             res.status(400).send("All entries are necessary")
         }
 
         // check if user already exists
-        const existingtrUser = await trModel.findOne({email})
-        if(existingtrUser) {
-            res.status(401).send("user already exists with same email")
+        const existingtrUser = await trModel.findOne({ email })
+        if (existingtrUser) {
+            return res.status(401).send("User already exists with this email")
         }
 
         //encrypt password
@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
         })
 
         //generate a token for user and send it
-        const token = jwt.sign({id: userTr._id}, process.env.SECRET_KEY, {expiresIn: "1h"})
+        const token = jwt.sign({ id: userTr._id }, process.env.SECRET_KEY, { expiresIn: "1h" })
 
         userTr.token = token
         userTr.password = undefined // pass in db wont be undefined

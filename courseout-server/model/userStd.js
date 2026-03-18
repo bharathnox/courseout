@@ -17,7 +17,11 @@ const userStdSchema = new mongoose.Schema({
     token: {
         type: String,
         default: null
-    }
+    },
+    enrolledCourses: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'courses'
+    }]
 })
 
 const stdModel = mongoose.model('userStds', userStdSchema)

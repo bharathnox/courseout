@@ -8,28 +8,32 @@ export default function Landing() {
         navigate('/loginpage')
     }
 
-    return(
-        <>
-            <div className='landingdiv'>
+    return (
+        <div className='landingdiv'>
+            <div className='hero'>
                 <h1>CourseOut is a platform where anyone can seek or supply courses</h1>
-                <div className='benefits'>
-                    <h2>Benefits as a course supplier</h2>
-                    <ol>
-                        <li>➵ Easy and efficient to delever your courses to students</li>
-                        <li>➵ If you are passionate to educate people, this is the place for you to deliver your content</li>
-                        <li>➵ Get benifit by selling your courses here..</li>
-                    </ol>
-                </div>
-                <div className='stdbenefits'>
-                    <h2>Benefits as a student</h2>
-                    <ol>
-                        <li>➵ Easy and efficient to learn with your desired courses</li>
-                        <li>➵ If you are passionate to learn, this is the place where you can get a quality content</li>
-                        <li>➵ Get benifit by learning with the courses here..</li>
-                    </ol>
-                </div>
-                <button onClick={SignInPage}>Sign-In / Log-In</button>
+                <p>Unlock your potential with premium learning experiences and cutting-edge courses.</p>
+                <button onClick={SignInPage} className='cta-button'>Get Started Now</button>
             </div>
-        </>
+
+            <div className='cards-container'>
+                <div className='benefits card'>
+                    <h2>For Instructors</h2>
+                    <ul>
+                        <li><span className="icon">{"->"}</span> Easy and efficient course delivery</li>
+                        <li><span className="icon">{"->"}</span> Share your passion with a global audience</li>
+                        <li><span className="icon">{"->"}</span> Earn by selling your premium content</li>
+                    </ul>
+                </div>
+                <div className='stdbenefits card'>
+                    <h2>For Students</h2>
+                    <ul>
+                        <li><span className="icon">{"->"}</span> Learn at your own pace with top courses</li>
+                        <li><span className="icon">{"->"}</span> High-quality content curated for you</li>
+                        <li><span className="icon">{"->"}</span> Upskill and reach your career goals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     )
 }

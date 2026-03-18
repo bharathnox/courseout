@@ -1,8 +1,55 @@
-.logs{
+.signin-page {
     display: flex;
-    justify-content: space-evenly;
-    height: 103.8%;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 160px);
+    padding: 40px 20px;
 }
-.vl{
-    border-left: 3px solid black;
+
+.logs-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--surface-border);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+}
+
+.divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin: 40px 0;
+}
+
+.divider span {
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    position: absolute;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+    .logs-container {
+        flex-direction: column;
+    }
+
+    .divider {
+        width: 100%;
+        height: 1px;
+        margin: 0;
+    }
 }

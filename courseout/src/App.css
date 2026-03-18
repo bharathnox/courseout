@@ -1,10 +1,25 @@
-button{
-    padding: 10px;
-    font-weight: 500;
-    font-size: medium;
-    border: 1px solid black;
-    border-radius: 8px;
+/* Global Interactive Elements */
+
+button {
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(to right, var(--primary), #6366f1);
+    border: none;
+    border-radius: 999px;
+    /* Pill shape */
+    box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39);
+    transition: all 0.3s ease;
 }
-button:hover{
+
+button:hover {
     cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+    background: linear-gradient(to right, var(--primary-hover), #4f46e5);
+}
+
+button:active {
+    transform: translateY(0px);
 }

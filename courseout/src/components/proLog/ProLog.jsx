@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import './ProLog.css'
 
 export default function ProLog() {
-
     const navigate = useNavigate();
 
     const handleSignuptr = () => {
@@ -14,14 +13,13 @@ export default function ProLog() {
     }
 
     return (
-        <>
-            <div className='hero1'>
-                <h1>If you are a professor / Teacher</h1>
-                <p>Sign-in if you already have an account</p>
-                <p>Sign-up to create an account</p>
+        <div className='auth-card prolog-card'>
+            <h1>For Instructors</h1>
+            <p>Ready to share your knowledge?</p>
+            <div className="auth-buttons">
+                <button onClick={handleLogintr} className="btn-secondary">Log-In</button>
                 <button onClick={handleSignuptr}>Sign-Up</button>
-                <button onClick={handleLogintr}>Log-In</button>
             </div>
-        </>
+        </div>
     )
 }

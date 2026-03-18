@@ -1,11 +1,87 @@
-.divcourses{
-    margin-left: 20px;
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.course-card {
+    border-radius: 16px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
+    gap: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-table, th, td, tr{
-    width: 700px;
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding: 7px;
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(79, 70, 229, 0.15);
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.course-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.price {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.description {
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.no-courses {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-style: italic;
+    grid-column: 1 / -1;
+}
+
+.enroll-btn {
+    margin-top: auto;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.enroll-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.enrolled-badge {
+    margin-top: auto;
+    text-align: center;
+    padding: 10px;
+    color: var(--primary);
+    background: rgba(79, 70, 229, 0.1);
+    border-radius: 12px;
+    font-weight: 600;
 }

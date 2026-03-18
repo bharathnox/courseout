@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import './StdLog.css'
 
 export default function StdLog() {
-
     const navigate = useNavigate()
 
     const handleSignup = () => {
@@ -11,15 +10,15 @@ export default function StdLog() {
     const handleLogin = () => {
         navigate('/login')
     }
+
     return (
-        <>
-            <div className='hero2'>
-                <h1>If you are a student</h1>
-                <p>Sign-in if you already have an account</p>
-                <p>Sign-up to create an account</p>
+        <div className='auth-card stdlog-card'>
+            <h1>For Students</h1>
+            <p>Ready to start learning?</p>
+            <div className="auth-buttons">
+                <button onClick={handleLogin} className="btn-secondary">Log-In</button>
                 <button onClick={handleSignup}>Sign-Up</button>
-                <button onClick={handleLogin}>Log-In</button>
             </div>
-        </>
+        </div>
     )
 }

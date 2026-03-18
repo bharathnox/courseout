@@ -1,29 +1,69 @@
-html, body{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+/* Removed conflicting body/html styles to fix scroll background glitch */
+
+.footerdiv {
+    width: 100%;
+    background: var(--surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--surface-border);
+    margin-top: auto;
+    padding: 24px 0;
 }
-.footerdiv{
+
+.footer-content {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(139, 127, 127);
-    margin-top: auto;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
 }
-.footerdiv p{
-    cursor: pointer;
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
-.footeritems{
+
+.footer-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    opacity: 0.8;
+}
+
+.footer-brand p {
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin: 0;
+}
+
+.footeritems {
     list-style: none;
     display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.footeritems li{
-    padding: 0 10px;
-}
-.footeritems li:hover{
-    text-decoration: underline;
+
+.footeritems li {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
     cursor: pointer;
+}
+
+.footeritems li:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
 }

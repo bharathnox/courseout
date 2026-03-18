@@ -1,7 +1,31 @@
-.teacherdiv{
+.teacherdiv {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: calc(100vh - 160px);
 }
-.yourcour{
-    margin-left: 20px;
+
+.teacher-courses-section {
+    flex: 1;
+    min-width: 0;
+    /* Ensures the CSS grid inside can shrink and wrap properly */
+}
+
+.yourcour {
+    margin: 0 0 24px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+@media (max-width: 1024px) {
+    .teacherdiv {
+        flex-direction: column-reverse;
+        /* Put course form at top on mobile */
+        padding: 24px;
+    }
 }

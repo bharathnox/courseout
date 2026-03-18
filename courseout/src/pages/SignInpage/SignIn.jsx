@@ -3,16 +3,19 @@ import ProLog from '../../components/proLog/ProLog'
 import StdLog from '../../components/stdLog/StdLog'
 import Navbar from '../../components/navbar/Navbar'
 import Footer from '../../components/footer/Footer'
+
 export default function SignIn() {
-    return(
+    return (
         <>
-            <Navbar/>
-            <div className="logs">
-                <ProLog/>
-                <div className="vl"></div>
-                <StdLog/>
+            <Navbar />
+            <div className="signin-page">
+                <div className="logs-container">
+                    <ProLog />
+                    <div className="divider"><span>OR</span></div>
+                    <StdLog />
+                </div>
             </div>
-            <Footer/>
+            <Footer />
         </>
     )
 }

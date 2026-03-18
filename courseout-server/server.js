@@ -20,6 +20,9 @@ const useLogin = require('./routes/login')
 const useLogintr = require('./routes/logintr')
 const useCreateCourse = require('./routes/createCourse')
 const useIndex = require('./routes/index')
+const useTeacherCourses = require('./routes/teacherCourses')
+const useEnroll = require('./routes/enroll')
+const useStudentCourses = require('./routes/studentCourses')
 
 app.use("/", useIndex)
 
@@ -33,10 +36,16 @@ app.use("/logintr", useLogintr)
 
 app.use("/createCourse", useCreateCourse)
 
-mongoose.connect(process.env.MONGO_URL).then( async ()=>{
+app.use("/teacherCourses", useTeacherCourses)
+
+app.use("/enroll", useEnroll)
+
+app.use("/studentCourses", useStudentCourses)
+
+mongoose.connect(process.env.MONGO_URL).then(async () => {
     console.log('Connected to MongoDB');
 
-    app.listen(process.env.PORT, ()=> {
+    app.listen(process.env.PORT, () => {
         console.log(`Server running on port: ${process.env.PORT}`);
     })
 })
