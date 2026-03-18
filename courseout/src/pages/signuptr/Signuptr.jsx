@@ -14,7 +14,7 @@ export default function Signuptr() {
     const handleSignuptr = (e) => {
         e.preventDefault();
         setError('')
-        axios.post("http://localhost:5002/signuptr", { trName, email, password })
+        axios.post("https://courseout.onrender.com/signuptr", { trName, email, password })
             .then(result => {
                 console.log(result);
                 localStorage.setItem('teacherId', result.data._id);

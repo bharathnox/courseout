@@ -14,7 +14,7 @@ export default function Signup() {
     const handleSignup = (e) => {
         e.preventDefault();
         setError('')
-        axios.post("http://localhost:5002/signup", { stdName, email, password })
+        axios.post("https://courseout.onrender.com/signup", { stdName, email, password })
             .then(result => {
                 console.log(result);
                 localStorage.setItem('studentId', result.data._id);

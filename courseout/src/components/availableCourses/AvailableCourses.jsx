@@ -6,11 +6,11 @@ export default function AvailableCourses({ teacherId, isStudent, studentId, mode
     const [courses, setCourses] = useState([])
 
     useEffect(() => {
-        let url = "http://localhost:5002";
+        let url = "https://courseout.onrender.com";
         if (teacherId) {
-            url = `http://localhost:5002/teacherCourses/${teacherId}`;
+            url = `https://courseout.onrender.com/teacherCourses/${teacherId}`;
         } else if (isStudent && mode === 'enrolled') {
-            url = `http://localhost:5002/studentCourses/${studentId}`;
+            url = `https://courseout.onrender.com/studentCourses/${studentId}`;
         }
 
         axios.get(url)
@@ -19,7 +19,7 @@ export default function AvailableCourses({ teacherId, isStudent, studentId, mode
     }, [teacherId, mode, studentId])
 
     const handleEnroll = (courseId) => {
-        axios.post("http://localhost:5002/enroll", { studentId, courseId })
+        axios.post("https://courseout.onrender.com/enroll", { studentId, courseId })
             .then(res => {
                 console.log(res);
                 if (setActiveTab) setActiveTab('enrolled');

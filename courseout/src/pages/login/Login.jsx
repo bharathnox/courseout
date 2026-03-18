@@ -13,7 +13,7 @@ export default function Login() {
     const handleLogin = (e) => {
         e.preventDefault();
         setError('')
-        axios.post('http://localhost:5002/login', { email, password })
+        axios.post('https://courseout.onrender.com/login', { email, password })
             .then(result => {
                 console.log(result)
                 localStorage.setItem('studentId', result.data.userStd._id);

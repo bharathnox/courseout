@@ -12,7 +12,7 @@ export default function Course() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const teacherId = localStorage.getItem('teacherId');
-        axios.post("http://localhost:5002/createCourse", { courseName, description, price, teacherId })
+        axios.post("https://courseout.onrender.com/createCourse", { courseName, description, price, teacherId })
             .then(result => {
                 console.log(result);
                 window.location.reload();

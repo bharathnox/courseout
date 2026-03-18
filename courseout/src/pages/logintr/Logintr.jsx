@@ -13,7 +13,7 @@ export default function Logintr() {
     const handleLogintr = (e) => {
         e.preventDefault();
         setError('')
-        axios.post('http://localhost:5002/logintr', { email, password })
+        axios.post('https://courseout.onrender.com/logintr', { email, password })
             .then(result => {
                 console.log(result)
                 localStorage.setItem('teacherId', result.data.userTr._id);
